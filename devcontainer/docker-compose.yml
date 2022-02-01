@@ -1,0 +1,19 @@
+version: "3.1"
+
+services:
+  db:
+    image: "postgres"
+    container_name: "simple-bank-db"
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_PASSWORD: secret
+      POSTGRES_USER: suhada
+      POSTGRES_DB: simple-bank
+      PGDATA: /data/postgres
+    volumes:
+      - simple-bank-vol:/data/postgres
+    restart: unless-stopped
+
+volumes:
+  simple-bank-vol:
