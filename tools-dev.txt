@@ -2,3 +2,4 @@ development tools
 - dbdiagram.io => draw our db schema 
 - docker => running service {db and app}
 - tableplus.com => watch our db datas 
+- golang migrate
