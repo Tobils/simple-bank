@@ -1,0 +1,9 @@
+1. create migration : migrate create -ext sql -dir dbmigrations -seq init_schema
+2. go to inside container pgsql : docker exec -it simple-bank-db bin/sh
+3. create db : createdb --username=suhada --owner=suhada simple_bank
+4. go to inside  db : psql simple_bank --username=suhada
+5. drop db : dropdb simple_bank --username=suhada
+6. directly : docker exec -it simple-bank-db createdb --username=suhada --owner=suhada simple_bank
+7. run migrations : migrate -path . -database "postgresql://suhada:secret@localhost:5432/simple_bank?sslmode=disable" -verbose up
+8. install sqlc : sudo snap install sqlc
+9. init sqlc: sqlc init 
